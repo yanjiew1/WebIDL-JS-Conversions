@@ -3,8 +3,13 @@
   "version": "8.0.1",
   "description": "Implements the WebIDL algorithms for converting to and from JavaScript values",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "lint": "eslint .",
+    "precoverage": "npm run build",
+    "pretest": "npm run build",
+    "prepare": "npm run build",
     "test": "node --test",
     "coverage": "c8 node --test --experimental-test-coverage test/*.js"
   },
@@ -26,13 +31,17 @@
     "@domenic/eslint-config": "^4.0.1",
     "c8": "^10.1.3",
     "eslint": "^9.39.2",
-    "globals": "^17.0.0"
+    "globals": "^17.0.0",
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=20"
   },
   "type": "module",
   "exports": {
-    ".": "./lib/index.js"
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
   }
 }
