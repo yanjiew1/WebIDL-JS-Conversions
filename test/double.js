@@ -1,9 +1,8 @@
-"use strict";
-const { describe, it } = require("node:test");
-const assert = require("node:assert/strict");
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 
-const conversions = require("..");
-const assertThrows = require("./helpers/assertThrows");
+import conversions from "../lib/index.js";
+import assertThrows from "./helpers/assertThrows.js";
 
 function commonTest(sut) {
   it("should return `0` for `0`", () => {

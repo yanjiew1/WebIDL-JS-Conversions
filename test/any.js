@@ -1,8 +1,7 @@
-"use strict";
-const { describe, it } = require("node:test");
-const assert = require("node:assert/strict");
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 
-const conversions = require("..");
+import conversions from "../lib/index.js";
 
 describe("WebIDL any type", () => {
   const sut = conversions.any;

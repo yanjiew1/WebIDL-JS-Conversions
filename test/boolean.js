@@ -1,9 +1,8 @@
-"use strict";
 /* eslint-disable no-new-wrappers */
-const { describe, it } = require("node:test");
-const assert = require("node:assert/strict");
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 
-const conversions = require("..");
+import conversions from "../lib/index.js";
 
 describe("WebIDL boolean type", () => {
   const sut = conversions.boolean;

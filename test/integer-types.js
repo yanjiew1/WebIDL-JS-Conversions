@@ -1,9 +1,8 @@
-"use strict";
-const { describe, it } = require("node:test");
-const assert = require("node:assert/strict");
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
 
-const conversions = require("..");
-const assertThrows = require("./helpers/assertThrows");
+import conversions from "../lib/index.js";
+import assertThrows from "./helpers/assertThrows.js";
 
 // For extraordinarily large (in magnitude) numbers, we can't rely on toString() to give the most accurate output. See
 // the note at https://tc39.es/ecma262/#sec-number.prototype.tofixed:

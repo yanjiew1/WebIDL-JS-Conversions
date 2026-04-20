@@ -1,6 +1,5 @@
-"use strict";
-const assert = require("node:assert/strict");
-const vm = require("node:vm");
+import assert from "node:assert/strict";
+import vm from "node:vm";
 
 const context = vm.createContext();
 const otherGlobals = {
@@ -9,7 +8,7 @@ const otherGlobals = {
   TypeError: vm.runInContext("TypeError", context)
 };
 
-module.exports = (converter, args, exceptionType) => {
+export default (converter, args, exceptionType) => {
   assert.throws(() => converter(...args), exceptionType);
 
   const exceptionFromOtherContext = vm.runInContext(exceptionType.name, context);

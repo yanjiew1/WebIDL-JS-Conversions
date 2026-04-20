@@ -1,11 +1,10 @@
-"use strict";
-const { describe, it } = require("node:test");
-const assert = require("node:assert/strict");
-const vm = require("node:vm");
-const { MessageChannel } = require("node:worker_threads");
+import { describe, it } from "node:test";
+import assert from "node:assert/strict";
+import vm from "node:vm";
+import { MessageChannel } from "node:worker_threads";
 
-const assertThrows = require("./helpers/assertThrows");
-const conversions = require("..");
+import assertThrows from "./helpers/assertThrows.js";
+import conversions from "../lib/index.js";
 
 function commonNotOk(sut) {
   it("should throw a TypeError for `undefined`", () => {
